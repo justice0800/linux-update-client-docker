@@ -1,0 +1,72 @@
+# =========================
+# 1. Python & FastAPI 後端快取與虛擬環境
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# 虛擬環境 (Virtual Environments)
+venv/
+.venv/
+env/
+.env_python/
+
+# =========================
+# 2. 前端 Node.js & Vite (PWA)
+# =========================
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# =========================
+# 3. 專案專屬：敏感資料與動態生成檔案 (絕對禁止上傳)
+# =========================
+# 存放機密金鑰或環境變數
+.env
+.env.*
+!.env.example
+
+# 系統運行時產生的暫存檔、使用者上傳的處分書照片
+uploads/
+temp/
+*.jpg
+*.jpeg
+*.png
+
+# AI 自動生成的 PDF 書狀與 Word 暫存檔
+outputs/
+generated_docs/
+*.pdf
+~$*.docx
+
+# 本地資料庫 (若未來有使用)
+*.db
+*.sqlite3
+
+# =========================
+# 4. 作業系統與編輯器暫存檔
+# =========================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp

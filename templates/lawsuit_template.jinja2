@@ -1,0 +1,45 @@
+臺灣{{ court_name }}行政法院 行政訴訟起訴狀
+
+原告：{{ plaintiff_name }}
+原告身分證字號：{{ plaintiff_id_no }}
+原告住居所：{{ plaintiff_address }}
+送達代收人：{{ service_agent_name }}
+送達地址：{{ service_agent_address }}
+
+被告：{{ defendant_agency }}
+代表人：{{ defendant_representative }}
+機關地址：{{ defendant_address }}
+
+案由：撤銷違法移置保管處分
+
+一、訴之聲明
+（一）請撤銷被告就車牌 {{ plate_number }} 所為移置保管之處分。
+{% if claim_refund_storage_fee %}（二）請命被告返還保管費新臺幣 {{ storage_fee_ntd }} 元。{% endif %}
+{% if claim_refund_towing_fee %}（三）請命被告返還拖吊費新臺幣 {{ towing_fee_ntd }} 元。{% endif %}
+{% if claim_state_compensation %}（四）原告就本件另行提起國家賠償程序之權利，聲明保留。{% endif %}
+{% if claim_litigation_costs %}（五）訴訟費用由被告負擔。{% endif %}
+
+二、事實與理由
+（一）大前提：法規與判例
+按道路交通管理處罰條例第35條及行政罰法第7條，行政機關為不利處分，應以客觀事實及相當證據為基礎，並受比例原則拘束。
+{% if precedent_summary %}卷查相關判決要旨：{{ precedent_summary }}{% endif %}
+
+（二）小前提：客觀事實與陰性證據
+經查本件原告於 {{ incident_date }} {{ incident_time }} 在 {{ incident_location }}（{{ police_precinct }} 轄區）受攔查，經唾液初步篩檢呈陽性後，車輛 {{ plate_number }} 遭移置保管 {{ impound_days }} 日，並生保管費新臺幣 {{ storage_fee_ntd }} 元。
+惟原告後送 {{ gcms_lab_name }} 檢驗，GC-MS 結果明確為「陰性」，足證初篩結果受干擾而生偽陽性。
+又查原告於現場所表現之客觀狀態為：{{ sobriety_observation }}。
+卷查全案，執勤員警未提出其他不能安全駕駛之客觀跡象，僅憑單一初篩即為移置保管， GC-MS 檢驗呈陰性導致原處分失所附麗，認事用法有誤，爰請撤銷。
+
+（三）結論：請求撤銷
+爰請鈞院撤銷原處分，以維法治與人民權益。
+
+{% if evidence_list %}
+三、證據清單
+{{ evidence_list }}
+{% endif %}
+
+此致
+臺灣{{ court_name }}行政法院
+
+具狀人：{{ plaintiff_name }}
+中華民國 {{ filing_date_roc }}
